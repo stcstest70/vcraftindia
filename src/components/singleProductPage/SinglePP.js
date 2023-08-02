@@ -91,7 +91,7 @@ const SinglePP = ({ Product, id }) => {
 
     const getUserDetails = async () => {
         try {
-            const res = await fetch('/getUserData', {
+            const res = await fetch('https://vci-api.onrender.com/getUserData', {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -140,7 +140,7 @@ const SinglePP = ({ Product, id }) => {
         e.preventDefault();
         const prodId = id;
         const { reviewerName, reviewtitle, reviewDescription } = userData;
-        const res = await fetch('/addReview', {
+        const res = await fetch('https://vci-api.onrender.com/addReview', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -171,7 +171,7 @@ const SinglePP = ({ Product, id }) => {
 
     const getAvgRating = async function () {
         try {
-            const res = await fetch(`/reviews/average-score/${id}`, {
+            const res = await fetch(`https://vci-api.onrender.com/reviews/average-score/${id}`, {
                 method: 'GET',
                 headers: {
                     "Accept": "application/json"

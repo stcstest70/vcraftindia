@@ -11,7 +11,7 @@ const CategorySlider = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   useEffect(() => {
-    axios.get('/getCategoryPX')
+    axios.get('https://vci-api.onrender.com/getCategoryPX')
       .then((res) => {
         setData(res.data);
         setLoading(false);

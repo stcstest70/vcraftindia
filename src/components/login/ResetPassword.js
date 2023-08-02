@@ -13,7 +13,7 @@ const ResetPassword = () => {
     useEffect(() => {
 		const verifyEmailUrl = async () => {
 			try {
-                const res = await fetch(`/user/${param.id}/resetPassword/${param.token}`, {
+                const res = await fetch(`https://vci-api.onrender.com/user/${param.id}/resetPassword/${param.token}`, {
                     method: 'GET',
                   });
                   if(res.status === 200){
@@ -41,7 +41,7 @@ const ResetPassword = () => {
         }
         else{
             try {
-                const res = await fetch('/resetPassword', {
+                const res = await fetch('https://vci-api.onrender.com/resetPassword', {
                     method:'POST',
                     headers:{
                         'Content-Type':'application/json'

@@ -11,7 +11,7 @@ const TrendingProduct = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
      useEffect(()=>{
-      axios.get('/getTrendingProductPX')
+      axios.get('https://vci-api.onrender.com/getTrendingProductPX')
     .then((res)=> {
       setData(res.data);
       setLoading(false);

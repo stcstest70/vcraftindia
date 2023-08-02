@@ -17,7 +17,7 @@ const MatchedProduct = () => {
 
   const [data, setData] = useState([]);
   useEffect(() => {
-    axios.get(`/getProdByCatPX/${name}`)
+    axios.get(`https://vci-api.onrender.com/getProdByCatPX/${name}`)
       .then((res) => {
         setData(res.data);
         setLoading(false);

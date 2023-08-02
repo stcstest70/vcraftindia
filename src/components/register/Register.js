@@ -96,7 +96,7 @@ const Register = () => {
     }
     else {
       const { name, address, city } = user;
-      const res = await fetch("/register", {
+      const res = await fetch("https://vci-api.onrender.com/register", {
         method: 'POST',
         headers: {
           "Content-Type": "application/json"

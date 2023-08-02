@@ -18,7 +18,7 @@ const TrackOrders = () => {
     },[]);
     
     const loginCheck = async () => {
-        const res = await fetch('/getUserData', {
+        const res = await fetch('https://vci-api.onrender.com/getUserData', {
             method: 'GET',
             headers: {
                 "Accept": "appliation/json"
@@ -31,7 +31,7 @@ const TrackOrders = () => {
         setData(data);
     }
     const getOrderDetails = async () => {
-        const dataPromise = fetch('/getOrderDetails');
+        const dataPromise = fetch('https://vci-api.onrender.com/getOrderDetails');
         dataPromise.then((response) => {
             return response.json();
         })

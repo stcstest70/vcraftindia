@@ -13,7 +13,7 @@ const EmailVerify = () => {
     useEffect(() => {
 		const verifyEmailUrl = async () => {
 			try {
-                const res = await fetch(`/user/${param.id}/verify/${param.token}`, {
+                const res = await fetch(`https://vci-api.onrender.com/user/${param.id}/verify/${param.token}`, {
                     method: 'GET',
                   });
                   const data = await res.json();

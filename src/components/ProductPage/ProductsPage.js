@@ -10,7 +10,7 @@ const ProductsPage = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
      useEffect(()=>{
-      axios.get(`/getProdByID_SP_PX/${id}`)
+      axios.get(`https://vci-api.onrender.com/getProdByID_SP_PX/${id}`)
     .then((res)=> {
       setData(res.data);
       setLoading(false);

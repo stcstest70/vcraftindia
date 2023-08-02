@@ -17,7 +17,7 @@ const Nav = () => {
   const { state: { cart } } = CartState();
   const { state1: { wishlist } } = WishlistState();
   useEffect(() => {
-    axios.get('/checkCookiePresent').then((res) => {
+    axios.get('https://vci-api.onrender.com/checkCookiePresent').then((res) => {
       if (res.status === 206) {
         dispatch({ type: "USER", payload: true })
       } else if (res.status === 406) {

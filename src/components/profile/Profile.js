@@ -25,7 +25,7 @@ const Profile = () => {
     const [data, setData] = useState();
     const loginCheck = async () => {
         setLoading(true);
-        const res = await fetch('/getUserData', {
+        const res = await fetch('https://vci-api.onrender.com/getUserData', {
             method: 'GET',
             headers: {
                 "Accept": "appliation/json"
@@ -72,7 +72,7 @@ const Profile = () => {
             }
             else {
                 try {
-                    const res = await fetch('/updateProfileInfo', {
+                    const res = await fetch('https://vci-api.onrender.com/updateProfileInfo', {
                         method: "POST",
                         headers: {
                             'Content-Type': 'application/json'
@@ -105,7 +105,7 @@ const Profile = () => {
             window.alert('Please Enter a valid E-mail');
         } else {
             try {
-                const res = await fetch('/updateProfileEmail', {
+                const res = await fetch('https://vci-api.onrender.com/updateProfileEmail', {
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json'
@@ -137,7 +137,7 @@ const Profile = () => {
     }
     const deleteUser = async () => {
         try {
-            const res = await fetch('/deleteAccount', {
+            const res = await fetch('https://vci-api.onrender.com/deleteAccount', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

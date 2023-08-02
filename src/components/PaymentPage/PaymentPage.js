@@ -16,7 +16,7 @@ const PaymentPage = () => {
     const [pincodeAvailable, setPincodeAvailable] = useState(false);
     const handleChangeAdress = async () => {
 
-        const res = await fetch('/changeAdress', {
+        const res = await fetch('https://vci-api.onrender.com/changeAdress', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -35,7 +35,7 @@ const PaymentPage = () => {
     }
     const handleChangeAdress2 = async () => {
 
-        const res = await fetch('/changeAdress', {
+        const res = await fetch('https://vci-api.onrender.com/changeAdress', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -53,7 +53,7 @@ const PaymentPage = () => {
         handleClose();
     }
     useEffect(() => {
-        axios.get('/getUserData').then((res) => {
+        axios.get('https://vci-api.onrender.com/getUserData').then((res) => {
             setUserDetails(res.data);
             if(userDetails.pincode >= 400001 && userDetails.pincode <= 400104){
                 setPincodeAvailable(true);
@@ -132,7 +132,7 @@ const PaymentPage = () => {
     const [loading, setLoading] = useState(false);
     const getToken = async () => {
         try {
-            const { data } = await axios.get("/braintree/token");
+            const { data } = await axios.get("https://vci-api.onrender.com/braintree/token");
             setClientToken(data?.clientToken);
         } catch (error) {
             console.log(error);
@@ -150,7 +150,7 @@ const PaymentPage = () => {
         try {
             setLoading(true);
             const { nonce } = await instance.requestPaymentMethod();
-            const res = await fetch("/braintree/payment",{
+            const res = await fetch("https://vci-api.onrender.com/braintree/payment",{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json'

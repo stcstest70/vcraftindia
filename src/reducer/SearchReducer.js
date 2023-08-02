@@ -36,7 +36,7 @@ export const DataProvider = ({ children }) => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('/getAllProducts', {
+        const response = await axios.get('https://vci-api.onrender.com/getAllProducts', {
           params: {
             fields: ['_id', 'name'], // Array of field names
           },

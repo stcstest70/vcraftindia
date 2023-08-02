@@ -5,7 +5,7 @@ const Logout = () => {
     const history = useNavigate();
     const {state, dispatch} = useContext(UserContext);
     useEffect(()=>{
-        fetch('/logout', {
+        fetch('https://vci-api.onrender.com/logout', {
             method: "GET",
             headers:{
                 Accept: "application/json",

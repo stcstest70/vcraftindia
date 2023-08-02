@@ -13,7 +13,7 @@ const ForgotPassword = () => {
     const checkUserEmail = async (e) => {
         setLoading(true);
         e.preventDefault();
-        const res = await fetch('/forgotPassword', {
+        const res = await fetch('https://vci-api.onrender.com/forgotPassword', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
