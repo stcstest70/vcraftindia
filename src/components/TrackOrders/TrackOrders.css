@@ -1,0 +1,125 @@
+.TrackOrders{
+    min-height: 90vh;
+    margin: 20px 30px;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.2);
+    background-color: #f1f3f6;
+    padding: 15px 0;
+}
+.orderContainer{
+    width: 80%;
+    margin: auto;
+}
+.orderheader h2{
+    color: #181818bd;
+    padding: 10px 15px;
+    width: fit-content;
+    background: white;
+    border: 1px solid #d7d7d7;
+    border-radius: 3px;
+}
+.orderItem{
+    background: white;
+    border: 1px solid #d7d7d7;
+    border-radius: 3px;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+.orderitem1 img{
+    width: 100px;
+    height: 100px;
+}
+.orderitem1{
+    min-width: 10%;
+}
+.orderitem2{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: auto 0;
+    width: 50%;
+}
+.orderitem3{
+    min-width: 5%;
+    height: 100%;
+    margin: auto 0;
+}
+.orderitem4{
+    min-width: 23%;
+    height: 100%;
+    margin: auto 0;
+    margin-right: 10px;
+}
+.orderitem234container{
+    width: 86%;
+    display: flex;
+    justify-content: space-between;
+}
+.noOrders{
+    text-align: center;
+    padding: 10px 17px;
+}
+@media only screen and (max-width : 1000px){
+    .orderContainer {
+        width: 90%;
+    }
+}
+@media only screen and (max-width : 750px){
+    .orderitem234container{
+        flex-direction: column;
+        width: 62%;
+    }
+    .orderitem1 img{
+        width: 175px;
+        height: 175px;
+    }
+    .orderitem2 {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        margin: 12px 0;
+        width: 100%;
+    }
+}
+@media only screen and (max-width : 600px){
+    .orderitem1 img{
+        width: 135px;
+        height: 135px;
+    }
+    .orderItem{
+        border-radius: 2px;
+        padding: 8px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 13px;
+    }
+    .TrackOrders {
+        min-height: 90vh;
+        margin: 9px 10px;
+        padding: 8px 0;
+    }
+    .orderheader h2 {
+        padding: 5px 5px;
+        font-weight: 600;
+        font-size: 17px;
+    }
+    .orderContainer {
+        width: 95%;
+    }
+    .orderitem234container {
+        flex-direction: column;
+        width: 67%;
+    }
+}
+@media only screen and (max-width : 450px){
+    .orderitem1 img {
+        width: 100px;
+        height: 100px;
+    }
+    .orderitem1 {
+        min-width: 10%;
+        height: 100%;
+        margin: auto;
+    }
+}

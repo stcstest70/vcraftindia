@@ -1,0 +1,111 @@
+.image{
+    width: 100px;
+    height: 100px;
+}
+.image img{
+    width: 100%;
+    height: 100%;
+}
+.items{
+    
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px 15px;
+
+}
+.items div:last-child{
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+}
+.cartContainer{
+    width: 80%;
+    margin: auto;
+    min-height: 100vh;
+    text-align: center;
+}
+.cartItem{
+    margin: 15px 10px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 3%), 0 6px 15px 0 rgb(0 0 0 / 10%);
+}
+.name, .del, .price{
+    height: fit-content;
+    margin: auto;
+}
+.name{
+    width: 45%;
+    color: #7e7e7e;
+}
+
+.del{
+    cursor: pointer;
+    padding-left: 10px;
+}
+.del i:hover{
+    color: red;
+}
+.price{
+    display: flex;
+    padding-right: 10px;
+}
+.summary{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: radial-gradient(#283648 38%,#28374a 55%, #304662 87%);
+    color: white;
+    border-radius: 5px;
+    margin: 30px 7px;
+    padding: 25px 0;
+}
+.summary button{
+    width: fit-content;
+    margin: auto;
+}
+.cartContainer > span{
+    font-size: 20px;
+    color: gray;
+}
+.quantity{
+    height: fit-content;
+    margin: auto;
+
+}
+select{
+    outline: none;
+}
+.quantity input{
+    width: 40px;
+    text-align: center;
+    padding: 2px;
+    color: black;
+}
+.quantity select{
+    padding: 3px;
+    color: #222222;
+}
+@media only screen and (max-width: 800px){
+    .cartContainer{
+        width: 90%;
+    }
+}
+@media only screen and (max-width: 600px){
+    .items{
+        flex-direction: column;
+    }
+    .image{
+        width: 175px;
+        height: 175px;
+        margin: auto;
+    }
+    .name{
+        width: 90%;
+    }
+    .items div:last-child {
+        display: flex;
+        width: 47%;
+        justify-content: space-between;
+        margin: 10px auto;
+    }
+}

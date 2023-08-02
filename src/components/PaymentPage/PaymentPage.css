@@ -1,0 +1,233 @@
+.paymentPage{
+    min-height: 100vh;
+    display: flex;
+    width: 80%;
+    margin: 20px auto;
+    /* flex-direction: column; */
+}
+.ppleft{
+    width: 70%;
+}
+.pprighr{
+    width: 30%;
+}
+.shippingDetails{
+    
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.2);
+    background-color: #f4f9ff;
+    margin: 0 13px;
+    border-radius: 3px;
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+}
+.shippingDetails h3, .cartitems h3, .pricedetails h3{
+    color: white;
+    margin-bottom: 25px;
+    background-color: #30a5f1 !important;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 3px;
+}
+.shippingDetails span{
+    font-size: 15px;
+    padding: 2px 9px;
+}
+.shippingDetails span span{
+    font-weight: bold;
+    color: #3a3a3a;
+}
+.cartitems{
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.2);
+    background-color: #f4f9ff;
+    margin: 0 13px;
+    margin-top: 20px;
+    border-radius: 3px;
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+}
+.cartitem{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px 15px;
+}
+.cname{
+    color: black;
+}
+.Pqty{
+    margin: auto;
+}
+.pricedetails{
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.2);
+    background-color: #f4f9ff;
+    margin: 0 13px;
+    border-radius: 3px;
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+}
+.pricedetails span{
+    font-size: 15px;
+    padding: 7px 9px;
+}
+.pricedetails span span{
+    font-weight: bold;
+    color: #3a3a3a;
+}
+.totalPayable span{
+    font-size: 20px;
+}
+.totalPayable span:last-child{
+    font-weight: 600;
+    color: #3a3a3a;
+}
+.shippingDetails button{
+    width: fit-content;
+    padding: 2px 7px;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    color: #2874f0;
+    background: none;
+    font-weight: 500;
+    font-size: 13px;
+    margin-left: 8px;
+}
+#modalborderbottom{
+    border-bottom: 1px solid #dfdfdf;
+}
+#changeAddress{
+    border: none;
+    border-bottom: 1px solid #dfdfdf;
+    outline: none;
+    width: 100%;
+}
+.btnp{
+    color: white;
+    border: none;
+    outline: none;
+    margin: 10px 5px;
+    padding: 2px 6px;
+    border-radius: 5px;
+}
+.cancel{
+    background-color: rgb(255, 103, 103);
+}
+.submit{
+    background: #30a5f1;
+}
+.cancel:hover{
+    background-color: rgb(255, 62, 62);
+}
+.submit:hover{
+    background: #008fee;
+}
+.addAdress ,.uselocation{
+    font-size: 14px;
+}
+.useLocation{
+    font-size: 16px;
+}
+.getlocationbtn{
+    position: relative;
+    right: 15%;
+    background: none;
+    border: none;
+    color: #004af9;
+}
+.getlocation button{
+    font-size: 17px;
+}
+.pqtyandprice{
+    display: flex;
+    justify-content: space-between;
+    width: 27%;
+}
+.pay{
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.2);
+    background-color: #f4f9ff;
+    margin: 15px 13px;
+    border-radius: 3px;
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+}
+.makePaymentbtn{
+    border: none;
+    outline: none;
+    background: #fb641b;
+    padding: 6px 0;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    margin: 0px 5px;
+}
+
+@media only screen and (max-width:1100px){
+    .paymentPage {
+        width: 90%;
+        margin: 15px auto;
+    }
+}
+@media only screen and (max-width:1000px){
+    .paymentPage {
+        width: 95%;
+        margin: 13px auto;
+    }
+    .pricedetails span {
+        margin-left: 7px;
+        padding: 7px 0px;
+    }
+    
+}
+@media only screen and (max-width:900px){
+    .paymentPage {
+        width: 90%;
+        margin: 15px auto;
+        flex-direction: column;
+    }
+    .ppleft, .pprighr{
+        width: 100%;
+    }
+}
+@media only screen and (max-width:600px){
+    .shippingDetails h3, .cartitems h3, .pricedetails h3{
+        font-size: 18px;
+    }
+    .shippingDetails span {
+        font-size: 13px;
+        padding: 2px 9px;
+    }
+    .cartitem {
+        padding: 2px 4px;
+        font-size: 13px;
+        flex-direction: column;
+        text-align: center;
+        margin: 13px 0;
+        border-bottom: 2px solid #dbdbdb;
+    }
+    .pqtyandprice {
+        display: flex;
+        width: fit-content;
+        margin: auto;
+    }
+    .Pqty, .Pprice{
+        padding: 3px 5px;
+    }
+    
+}
+@media only screen and (max-width:460px){
+    .image100{
+        width: 100px;
+        height: 100px;
+    }
+    .paymentPage {
+        width: 100%;
+    }
+}
+@media only screen and (max-width:400px){
+    .getlocationbtn{
+        right: 20%;
+    }
+}

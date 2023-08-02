@@ -1,0 +1,1 @@
+mongodb+srv://JayPrakash:<password>@cluster0.1qyfer2.mongodb.net/?retryWrites=true&w=majority

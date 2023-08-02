@@ -1,0 +1,19 @@
+.wishlistheader{
+    margin-left: 35px;
+    margin-top: 35px;
+    color: #405670e3;
+}
+.nowishlist{
+    color: #405670e3;
+    text-align: center;
+}
+.wishlistcontainer{
+    min-height: 70vh;
+}
+@media only screen and (max-width:800px){
+    .wishlistheader{
+        margin-left: 15px;
+        margin-top: 15px;
+        color: #405670e3;
+    }
+}

@@ -1,0 +1,25 @@
+.verified-container{
+    height: 100vh;
+}
+.verified-img-container{
+    justify-content: center;
+    display: flex;
+    height: 50vh;
+}
+.verified-img-header{
+    font-family: sans-serif;
+    text-align: center;
+    color: #454e93;
+}
+.verified-btn-container{
+text-align: center;
+}
+.verified-btn{
+    margin: 20px 0;
+    border: none;
+    background: #007eff;
+    color: white;
+    padding: 4px 13px;
+    border-radius: 8px;
+    font-size: 23px;
+}

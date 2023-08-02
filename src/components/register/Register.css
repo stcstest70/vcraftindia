@@ -1,0 +1,106 @@
+.registerPage{
+    background-color: #d5eeff;
+    padding: 25px 0;
+}
+.registerContainer{
+    width: 90%;
+    margin: auto;
+    min-height: 80vh;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+}
+.registerContainer > div, .registerContainer > form{
+    width: 50%;
+}
+.registerContainer form{
+    background-color: #a5dbff;
+    padding: 25px;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    min-height: fit-content;
+}
+.registerContainer div{
+    margin: auto;
+}
+.regImg img{
+    width: 75%;
+    height: 75%;
+}
+ .regImgContainer{
+    text-align: center;
+} 
+.registerForm h2{
+    text-align: center;
+    color: black;
+}
+.form-ele .ele{
+    display: flex;
+    padding: 10px;
+}
+.form-ele{
+    width: fit-content;
+    margin: 0 auto;
+}
+.ele input{
+    border: none;
+    padding: 2px 4px;
+    border-radius: 4px;
+    outline: none;
+}
+.ele label{
+    margin-right: 5px;
+}
+.register{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.register button{
+    border: none;
+    padding: 5px 8px;
+    margin: 15px 7px;
+    color: white;
+    background: #30a5f1;
+    border-radius: 5px;
+}
+.register button a{
+    color: inherit;
+    text-decoration: none;
+}
+.register button:hover{
+    background-color: #0077c7;
+}
+.register button:first-child{
+    background-color: #e74545;
+}
+/* .register button:first-child :hover{
+    background-color: #db1c1c;
+} */
+.form-ele p{
+    color: red;
+    text-align: center;
+    font-size: 13px;
+    padding: 0;
+    margin: 0;
+}
+@media only screen and (max-width: 800px){
+    .registerContainer .regImgContainer{
+        display: none;
+    }
+    .registerPage form{
+        width: 100%;
+        border-radius: 13px;
+    }
+}
+@media only screen and (max-width: 400px){
+    .registerPage form{
+        width: 100%;
+        border-radius: 13px;
+        padding: 10px 0;
+    }
+    .signin h6{
+        margin: 0 10px;
+        margin-top: 10px;
+    }
+}

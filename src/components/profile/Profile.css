@@ -1,0 +1,474 @@
+.profilePageContainer {
+    min-height: 80vh;
+    margin: 20px 30px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .2);
+    background-color: #f1f3f6;
+    padding: 15px 0;
+}
+
+.profilepage {
+    width: 80%;
+    margin: auto;
+    display: flex;
+}
+
+.profilelogo img {
+    height: 50px;
+    width: 50px;
+}
+
+.profileleft {
+    width: 23%;
+}
+
+.profileright {
+    width: 77%;
+}
+
+.helloUser {
+    display: flex;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .08);
+    padding: 10px;
+    margin-bottom: 16px;
+}
+
+.profileName {
+    padding: 5px 0 0 16px;
+}
+
+.profileName span {
+    font-size: 12px;
+    color: #484848;
+}
+
+.profileName h6 {
+    padding-top: 3px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.userOptions {
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .08);
+    padding: 10px;
+    margin-bottom: 16px;
+}
+
+.optionlist>ul {
+    padding: 5px 9px;
+    margin: 0;
+}
+
+.li1 a,
+.li3 a,
+.li4 a {
+    width: calc(100% - 26px);
+    padding-left: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #878787;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.li1 a:hover,
+.li3 a:hover,
+.li4 a:hover {
+    color: #2874f1;
+}
+
+.li1 img {
+    width: 20px;
+    height: 16px;
+}
+
+.li3 img,
+.li4 img {
+    width: 20px;
+    height: 20px;
+}
+
+.li2 img {
+    width: 20px;
+    height: 20px;
+}
+
+.li2 span {
+    width: calc(100% - 26px);
+    padding-left: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #568be1;
+    font-weight: 600;
+    cursor: default;
+}
+
+.optionlist>ul>li {
+    margin: 27px 0px;
+}
+
+.innerul li {
+    font-size: 13px;
+    color: #878787;
+    margin: 22px 0;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.innerul li:hover {
+    color: #2874f1;
+}
+
+.li3 svg {
+    color: #0660f3;
+    font-size: 23px;
+}
+
+.li4 svg {
+    color: #2874f0;
+    font-size: 23px;
+}
+
+.personaldetails {
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .08);
+    /* padding: 10px; */
+    margin-bottom: 16px;
+    margin-left: 16px;
+}
+
+.detailss {
+    display: flex;
+    padding: 20px 8px;
+}
+
+.detailss h5 {
+    margin-left: 22px;
+    margin-top: 5px;
+}
+
+.detailss button {
+    border: none;
+    outline: none;
+    background-color: inherit;
+    font-weight: bold;
+    font-size: 14px;
+    color: #2874f0;
+    margin: 0 10px;
+}
+
+#savebtn {
+    background-color: #2874f0;
+    color: white;
+    font-size: 16px;
+    padding: 6px 13px;
+    border-radius: 3px;
+}
+
+#savebtn:hover {
+    background-color: #0059e9;
+}
+
+.savebtn {
+    display: none;
+}
+
+.savebtn_active {
+    display: block;
+}
+
+.changedetails {
+    padding: 22px;
+}
+
+.detail {
+    padding: 11px 30px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    border: 1px solid #d7d7d7;
+    border-radius: 3px;
+    cursor: not-allowed;
+}
+
+.detail span:first-of-type {
+    color: gray;
+    font-size: 11px;
+}
+
+.detail span:last-of-type {
+    font-size: 15px;
+}
+
+.detailemail {
+    margin-top: 20px;
+}
+
+.deactivate {
+    padding: 5px;
+    margin-left: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #2874f0;
+}
+
+.profulerightimg img {
+    width: 100%;
+}
+
+.changedetailsdiv2,
+.changedetailsdiv1 {
+    display: none;
+}
+
+.edit_active {
+    display: block;
+}
+
+.detailformelement {
+    /* padding: 0; */
+    cursor: text;
+}
+
+.detail input {
+    border: none;
+    outline: none;
+    font-size: 15px;
+    line-height: 39px;
+}
+
+.emailnote span {
+    color: red;
+    font-size: 12px;
+}
+
+.displaynone {
+    display: none;
+}
+
+.deactivate span {
+    cursor: pointer;
+}
+
+.optionlist2 {
+    display: none;
+}
+
+@media only screen and (max-width: 1150px) {
+    .profilepage {
+        width: 90%;
+    }
+
+    .userOptions {
+        padding: 0px;
+    }
+
+    .optionlist>ul>li {
+        margin: 16px 0px;
+    }
+
+    .li2 span {
+        padding-left: 11px;
+    }
+
+    .li1 a,
+    .li3 a,
+    .li4 a {
+        padding-left: 11px;
+    }
+
+    .innerul li {
+        margin: 14px 0;
+        margin-left: 12px;
+    }
+
+    .profilelogo img {
+        height: 38px;
+        width: 38px;
+    }
+
+    .profileName {
+        padding: 1px 0 0 8px;
+    }
+
+    .profileName h6 {
+        padding-top: 0px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .profilePageContainer {
+        margin: 10px 11px;
+        padding: 11px 0;
+    }
+
+    .li2 img {
+        width: 15px;
+        height: 15px;
+    }
+
+    .li1 img {
+        width: 15px;
+        height: 11px;
+    }
+
+    .li4 svg {
+        font-size: 17px;
+    }
+
+    .li3 svg {
+        font-size: 16px;
+    }
+
+    .li2 span {
+        padding-left: 10px;
+        font-size: 13px;
+    }
+
+    .li1 a,
+    .li3 a,
+    .li4 a {
+        font-size: 13px;
+    }
+
+    .li1 a,
+    .li3 a,
+    .li4 a {
+        padding-left: 9px;
+    }
+
+    .innerul li {
+        margin: 12px 0;
+        margin-left: 3px;
+    }
+
+    .profileName h6 {
+        padding-top: 0px;
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .profileleft {
+        width: 25%;
+    }
+
+    .detailss {
+        display: flex;
+        padding: 14px 8px;
+    }
+
+    .changedetails {
+        padding: 11px;
+    }
+
+    .detail {
+        padding: 6px 18px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 17px;
+        border: 1px solid #d7d7d7;
+        border-radius: 3px;
+        cursor: not-allowed;
+    }
+
+    #savebtn {
+        font-size: 14px;
+        padding: 2px 8px;
+    }
+
+    .detail input {
+        font-size: 13px;
+        line-height: 30px;
+    }
+
+    .detail span:last-of-type {
+        font-size: 13px;
+    }
+
+    .detail span:first-of-type {
+        color: gray;
+        font-size: 10px;
+    }
+
+    .deactivate {
+        font-size: 10px;
+    }
+
+    .detailss h5 {
+        margin-left: 0px;
+        margin-top: 5px;
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 610px) {
+    .profilepage {
+        width: 93%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profileleft,
+    .profileright {
+        width: 100%;
+    }
+
+    .personaldetails {
+        margin-left: 0px;
+    }
+
+    .optionlist2 {
+        display: block;
+    }
+
+    .optionlist {
+        display: none;
+    }
+
+    .optioncontainer {
+        display: flex;
+        text-align: center;
+        justify-content: space-around;
+    }
+
+    .option2 {
+        width: 190px;
+        height: 50px;
+        padding-top: 12px;
+        border-radius: 3px;
+        background: #fff;
+        margin: 11px 0;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .08);
+    }
+
+    .option2>span>a{
+        text-decoration: none;
+        color: #343434;
+    }
+    .option2>span>a:hover{
+        color: #568be1;
+    }
+    .option2>span{
+        color: #568be1;
+    }
+    .option2 img {
+        margin-right: 5px;
+    }
+
+    .option2 svg {
+        font-size: 23px;
+        color: #2874f1;
+    }
+}
+@media only screen and (max-width: 450px){
+    .option2 {
+        width: 136px;
+    }
+}

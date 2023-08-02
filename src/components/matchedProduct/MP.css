@@ -1,0 +1,169 @@
+.products{
+    padding: 40px;
+}
+
+.pcontainer{
+    display: grid;
+    /* grid-template-rows: 1fr 1fr 1fr 1fr; */
+    grid-template-areas: "pcard pcard pcard pcard";
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: 80%;
+    margin: auto;
+    grid-gap: 30px;
+}
+.card-img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+}
+.pcard{
+    text-align: center;
+}
+.ptype{
+    color: rgb(134, 134, 134);
+    font-size: 13px;
+}
+.pprice p{
+    color: #878585;
+    margin: 0;
+    font-size: 13px;
+    text-decoration: line-through;
+}
+.pprice h6{
+    font-size: 18px;
+    font-weight: 400;
+    color: #202020;
+}
+.btn{
+    background-color: #222222;
+    color: white;
+}
+.btn:hover{
+    color: white !important;
+}
+.strong {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+ }
+ .pcard{
+    position: relative;
+ }
+ .pcard i{
+    font-size: 27px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    opacity:40%;
+    cursor: pointer;
+ }
+ .pcard i:hover{
+    opacity: 90%;
+ }
+ .noProdFound{
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 40px;
+ }
+ .active{
+    display: none;
+ }
+ .activewishlist{
+    color: #ff5454;
+    opacity: 100% !important;
+ }
+@media only screen and (max-width: 1200px){
+    .products{
+        padding: 20px 0;
+    }
+    .pcontainer{
+        width: 90%;
+    }
+}
+@media only screen and (max-width: 1000px){
+    .card{
+        padding: 10px 0 !important;
+    }
+    .card-body{
+        padding: 10px 0 !important;
+    }
+}
+@media only screen and (max-width: 750px){
+    .ptype {
+        color: rgb(134, 134, 134);
+        font-size: 11px;
+    }
+    .card-title {
+        margin-bottom: 0.5rem;
+        font-weight: 300 !important;
+        font-size: 14px !important;
+    }
+    .pprice p {
+        color: #878585;
+        margin: 0;
+        font-size: 11px;
+        text-decoration: line-through;
+    }
+    .pprice h6 {
+        font-size: 14px;
+        font-weight: 400;
+        color: #202020;
+    }
+    .btn {
+        background-color: #222222;
+        color: white;
+        font-size: 13px !important;
+        padding: 3px 10px !important;
+        border-radius: 2px !important;
+    }
+    .pcard i {
+        font-size: 22px;
+        top: 7px;
+        right: 7px;
+    }
+}
+@media only screen and (max-width: 600px){
+    .pcontainer{
+        display: grid;
+        /* grid-template-rows: 1fr 1fr 1fr 1fr; */
+        grid-template-areas: "pcard pcard pcard";
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        width: 93%;
+        margin: auto;
+        grid-gap: 15px;
+    }
+    .card-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .pcard i {
+        font-size: 22px;
+        top: 4px;
+        right: 4px;
+    }
+}
+@media only screen and (max-width: 430px){
+    .pcontainer{
+        display: grid;
+        /* grid-template-rows: 1fr 1fr 1fr 1fr; */
+        grid-template-areas: "pcard pcard";
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 93%;
+        margin: auto;
+        grid-gap: 15px;
+    }
+    .card-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .products {
+        padding: 0px 0;
+    }
+    .card-text button{
+        font-size: 12px !important;
+    }
+}

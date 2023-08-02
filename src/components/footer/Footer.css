@@ -1,0 +1,77 @@
+.footer{
+    background: radial-gradient(#283648 38%,#28374a 55%, #304662 87%);
+}
+.footer-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 80%;
+    margin: auto;
+    padding: 50px 0;
+}
+.footer-component ul li{
+    color: #DDD;
+    cursor: pointer;
+    list-style: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+.footer-component ul li i{
+    margin-right: 5px;
+}
+.footer-component{
+    margin: 5px 0;
+}
+.footer-component ul a{
+    color: inherit;
+}
+.footer-component ul li:hover{
+    text-decoration: underline;
+}
+.footer-component ul h6{
+    color: white;
+}
+.footer-end{
+    background-color: #202b3a;
+    text-align: center;
+}
+.footer-end h6{
+    color: rgb(209, 209, 209);
+    padding: 20px 0;
+    margin: 0;
+}
+@media only screen and (max-width:900px){
+    .footer-grid{
+        grid-template-columns: 1fr 1fr;
+    }
+    .footer-component ul li{
+        font-size: 12px;
+    }
+    .footer-end h6{
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width:700px){
+    .footer-grid{
+        width: 95%;
+        padding: 20px 0;
+    }
+}
+@media only screen and (max-width:500px){
+    .footer-grid{
+        width: 98%;
+        grid-template-columns: 1fr;
+    }
+    .footer-component{
+        margin: auto;
+        width: 100%;
+    }
+    .footer-end h6{
+        font-size: 12px;
+    }
+    .footer-component ul li{
+        font-size: 15px;
+    }
+    .footer-component ul h6{
+        font-size: 17px;
+    }
+}

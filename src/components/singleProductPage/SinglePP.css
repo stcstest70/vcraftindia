@@ -1,0 +1,327 @@
+.singlePP{
+    width: 80%;
+    margin: 50px auto;
+    display: flex;
+}
+.productImg{
+    width: 400px;
+    height: 400px;
+    border: 1px solid rgb(216, 216, 216);
+}
+.PPleft{
+    text-align: center;
+    width: 45%;
+}
+.PPright{
+    width: 55%;
+}
+.btns button{
+    padding: 15px 12px;
+    font-weight: 700;
+    border: none;
+    border-radius: 4px;
+    margin: 5px;
+}
+.btns button a{
+    text-decoration: none;
+    color: white;
+}
+.btns button:first-child{
+    background: #ff9f00;
+}
+.btns button:last-child{
+    background: #fb641b;
+}
+.btns button:first-child:hover{
+    background: #f39600;
+}
+.btns button:last-child:hover{
+    background: #f05609;
+}
+.price{
+    display: flex;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.PPright h2{
+    margin: 4px 0;
+    color: #2e2c2c;
+}
+.price h5{
+    color: gray;
+    text-decoration: line-through;
+    margin: 0 7px;
+}
+.price h3{
+    font-size: 18px;
+    color: green;
+    margin: 10px 0;
+    margin-left: 20px;
+}
+.checkAvailability input{
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+.checkAvailability a{
+    color: #5a5a5a;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 10px;
+}
+.checkAvailability a:hover{
+    color: rgb(27, 27, 27);
+}
+.PPright .btns{
+    display: none;
+}
+.description h4{
+    color: dimgray;
+    font-size: 20px;
+    margin: 20px 10px;
+}
+.description ul li{
+    margin: 10px 0px;
+}
+.btns a{
+    color: inheri;
+    text-decoration: none;
+}
+.btns button{
+    color: white;
+}
+/* ---------------This is review section---------------------*/
+.reviewContainer{
+    width: 80%;
+    margin: 50px auto;
+}
+.reviewHeader{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.stars1,.stars2,.stars3,.stars4,.stars5{
+    line-height: normal;
+    display: inline-block;
+    color: #fff;
+    padding: 2px 4px 2px 6px;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 12px;
+    vertical-align: middle;
+}
+.stars3,.stars4,.stars5{
+    background-color: #388e3c;
+}
+.stars2{
+    background-color: #ff9f00;
+}
+.stars1{
+    background-color: #ff6161;
+}
+.stars1 span:last-child img,.stars2 span:last-child img,.stars3 span:last-child img,.stars4 span:last-child img,.stars5 span:last-child img{
+    width: 17px;
+}
+.stars1 span:first-child,.stars2 span:first-child,.stars3 span:first-child,.stars4 span:first-child,.stars5 span:first-child{
+    font-size: 14px;
+    margin-right: 3px;
+    margin-top: 10px;
+}
+
+.reviewfooteritem{
+    margin: 15px 10px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 3%), 0 6px 15px 0 rgb(0 0 0 / 10%);
+    min-height: 100px;
+}
+.itemheader{
+    padding-top: 10px;
+    padding-left: 15px;
+    display: flex;
+}
+.reviewtitle{
+    margin-left: 8px;
+    font-weight: 600;
+    color: #3e3e3eed;
+}
+.itemdescription{
+    margin: 10px 18px;
+    color: #363636eb;
+}
+.reviewBy{
+    margin-left: 60px;
+    font-size: 12px;
+    color: #525252;
+}
+input[type='radio']{
+    display: none;
+}
+.star{
+    cursor: pointer;
+    transition: color 200ms;
+    font-size: 26px;
+}
+.element_rating{
+    border: 2px groove black;
+    color: rgb(46, 46, 45);
+    background-color: aliceblue;
+    padding: 5px 10px;
+    border-radius: 20px;
+    width: 100%;
+    outline: none;
+}
+.noreview{
+    text-align: center;
+    padding-top: 36px;
+    color: gray;
+}
+.del{
+    display: flex;
+}
+.delh5{
+    color: #0a0a0a;
+    font-size: 20px;
+    margin: 20px 0px;
+}
+.productImgContainer i{
+    position: relative;
+    top: -162px;
+    right: 45px;
+    font-size: 28px;
+}
+.pincode-a-h{
+    font-size: 19px;
+    margin: 1px 20px;
+}
+.pincode-a-h span{
+    color: red;
+    font-weight: bold;
+}
+.checkAvailability button{
+    background: none;
+    border: none;
+    color: #2e31ff;
+}
+.pincode_status{
+    margin: 7px 10px;
+    color: #343434;
+}
+@media only screen and (max-width:1220px){
+    .singlePP{
+        width: 95%;
+        margin: 40px auto;
+        display: flex;
+    }
+    .productImg {
+        width: 330px;
+        height: 330px;
+        border: 1px solid rgb(216, 216, 216);
+    }
+    .productImgContainer i {
+        position: relative;
+        top: -128px;
+        right: 45px;
+        font-size: 28px;
+    }
+}
+@media only screen and (max-width:900px){
+    .productImg {
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgb(216, 216, 216);
+    }
+    .productImgContainer i {
+        position: relative;
+        top: -120px;
+        right: 38px;
+        font-size: 25px;
+    }
+}
+@media only screen and (max-width:750px){
+    .singlePP{
+        width: 100%;
+        margin: 50px auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .PPleft, .PPright{
+        width: 100%;
+    }
+    .PPleft .btns{
+        display: none;
+    }
+    .PPright .btns{
+        display: block;
+        text-align: center;
+        margin: 20px auto;
+        margin-left: -15px;
+    }
+    .btns button{
+        padding: 10px !important;
+    }
+    .PPright h2{
+        text-align: center;
+    }
+    .price {
+        display: flex;
+        width: fit-content;
+        margin: 13px auto;
+    }
+    .checkAvailability{
+        text-align: center;
+    }
+    .description h4,h5{
+        text-align: center;
+    }
+    .description ul{
+        margin-left: 50px;
+    }
+}
+@media only screen and (max-width:550px){
+    .description ul{
+        margin-left: 25px;
+    }
+    .PPright h2 {
+        text-align: center;
+        font-size: 19px;
+        margin-top: 20px;
+        width: 90%;
+    }
+    .avgRating h3{
+        font-size: 16px;
+    }
+    .reviewContainer {
+        width: 90%;
+    }
+    .stars span:first-child {
+        font-size: 12px;
+    }
+    .stars span:last-child img {
+        width: 13px;
+    }
+    .reviewtitle {
+        margin-left: 8px;
+        font-weight: 600;
+        color: #3e3e3eed;
+        font-size: 13px;
+    }
+    .itemdescription {
+        font-size: 13px;
+    }
+    .reviewBy {
+        font-size: 11px;
+    }
+    .pincode-a-h{
+        font-size: 16px;
+    }
+    .description h4 {
+        font-size: 16px;
+    }
+}
+@media only screen and (max-width:400px){
+    .reviewContainer {
+        width: 96%;
+    }
+    .reviewHeader {
+        width: 90%;
+        margin: auto;
+    }
+}
