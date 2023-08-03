@@ -15,7 +15,11 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
 
   const loginUser = async (e) => {
-    setLoading(true);
+    if(!email || !password){
+      window.alert('Please Fill all fields!')
+    }
+    else{
+      setLoading(true);
     e.preventDefault();
 
     const res = await fetch('https://vci-api.onrender.com/login', {
@@ -62,6 +66,8 @@ const Login = () => {
       window.alert("Some error occured in login");
       setLoading(false);
     }
+    }
+    
   }
 
   return (
@@ -69,10 +75,10 @@ const Login = () => {
       <form className="loginPage" method="POST">
         <h2> Login Here</h2> <br /> <br />
         <div className='labF'> <label for="email"><i className="fa-solid fa-user" />
-        </label> <input type="text" name="email" id="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
+        </label> <input type="text" name="email" id="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} required/>
         </div> <br />
         <div className='labF'> <label for="password"><i className="fa-solid fa-lock" />
-        </label> <input type="password" name="userpassword" id="password" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
+        </label> <input type="password" name="userpassword" id="password" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} required/>
         </div> <br />
 
         <div className="signIn">

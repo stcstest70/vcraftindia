@@ -1,0 +1,16 @@
+@media only screen and (max-width:500px){
+    .banner-container{
+        height: 180px;
+    }
+    .banner-img{
+        height: 180px;
+    }
+}
+@media only screen and (max-width:400px){
+    .banner-container{
+        height: 160px;
+    }
+    .banner-img{
+        height: 160px;
+    }
+}

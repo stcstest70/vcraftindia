@@ -75,7 +75,7 @@ const MatchedProduct = () => {
             return (
               <div className='pmyCards'>
                 <div className="pcard">
-                  <Card className='my-3 p-3 rounded' key={myProduct._id}>
+                  <Card key={myProduct._id}>
                     <Link to={`/products/${myProduct._id}`} key={myProduct._id}>
                       <Card.Img src={myProduct.image} alt={myProduct.name} className="card-img" key={myProduct._id} />
                     </Link>

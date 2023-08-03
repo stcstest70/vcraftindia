@@ -274,6 +274,9 @@ input[type='radio']{
     .description ul{
         margin-left: 50px;
     }
+    .description h6{
+        margin: 0 20px;
+    }
 }
 @media only screen and (max-width:550px){
     .description ul{
@@ -323,5 +326,8 @@ input[type='radio']{
     .reviewHeader {
         width: 90%;
         margin: auto;
+    }
+    .description h6{
+        margin: 0 10px;
     }
 }
