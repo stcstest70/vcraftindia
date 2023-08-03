@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import { UserContext } from "../../App"
+import { Spinner } from 'react-bootstrap';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -11,8 +12,10 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const currentPageURL = window.location.origin; 
+  const [loading, setLoading] = useState(false);
 
   const loginUser = async (e) => {
+    setLoading(true);
     e.preventDefault();
 
     const res = await fetch('https://vci-api.onrender.com/login', {
@@ -41,18 +44,23 @@ const Login = () => {
         // redirect the user to the default page
         window.location.href = '/';
       }
+      setLoading(false);
     }
     else if (res.status === 400) {
       window.alert("An email has been sent to your account. Please verify to continue!");
+      setLoading(false);
     }
     else if (res.status === 401) {
       window.alert("Email is not registered !");
+      setLoading(false);
     }
     else if (res.status === 402) {
       window.alert("Invalid Credentials  !");
+      setLoading(false);
     }
     else {
       window.alert("Some error occured in login");
+      setLoading(false);
     }
   }
 
@@ -68,7 +76,8 @@ const Login = () => {
         </div> <br />
 
         <div className="signIn">
-          <button type="submit" name="signIn" onClick={loginUser}>Sign In</button>
+          {loading ? <Spinner animation="border" />: <button type="submit" name="signIn" onClick={loginUser}>Sign In</button>}
+          
         </div>
         <br /> 
         <div className="signup">

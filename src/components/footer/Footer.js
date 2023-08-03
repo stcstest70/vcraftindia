@@ -2,7 +2,7 @@ import React from 'react'
 import "./Footer.css"
 import axios from 'axios';
 import {useState, useEffect} from 'react'
-import { Category } from '../../StaticData/Category';
+// import { Category } from '../../StaticData/Category';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -12,6 +12,7 @@ const Footer = () => {
     .then((res)=> setData(res.data))
     .catch((err)=>{console.log(err,'there is an error')});
   },[setData]);
+  // console.log(data[0].name);
   return (
     <div>
       <div className='footer'>
@@ -20,7 +21,8 @@ const Footer = () => {
             <ul>
               <h6>ABOUT US</h6>
               <Link to='/'><li>HOME</li></Link>
-              <Link to={`/matchedProduct/${Category[0].name}`}><li>PRODUCTS</li></Link>
+              <Link to={`/matchedProduct/Idols`}><li>PRODUCTS</li></Link>
+              {/* <Link to={`/matchedProduct/${data[0].name}`}><li>PRODUCTS</li></Link> */}
               <Link to="/contact"><li>CONTACT</li></Link>
               <li>TRACK ORDER</li>
             </ul>
