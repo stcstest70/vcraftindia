@@ -64,7 +64,7 @@ const PaymentPage = () => {
     const userName = userDetails.name;
     const userEmail = userDetails.email;
     const userAddress = userDetails.address;
-    const pincode = userDetails.pincode;
+    // const pincode = userDetails.pincode;
     
     const [total, setTotal] = useState();
     useEffect(() => {

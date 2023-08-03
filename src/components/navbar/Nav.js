@@ -116,7 +116,7 @@ const Nav = () => {
 
   const [data, setData] = useState([]);
   useEffect(() => {
-    axios.get('/getCategoryPX')
+    axios.get('https://vci-api.onrender.com/getCategoryPX')
       .then((res) => setData(res.data))
       .catch((err) => { console.log(err, 'there is an error') });
   }, [setData]);
