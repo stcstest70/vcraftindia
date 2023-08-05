@@ -5,23 +5,27 @@ const Logout = () => {
     const history = useNavigate();
     const {state, dispatch} = useContext(UserContext);
     useEffect(()=>{
-        fetch('https://vci-api.onrender.com/logout', {
-            method: "GET",
-            headers:{
-                Accept: "application/json",
-                "Content-Type":"application/json"
-            },
-            credentials:"include"
-        }).then((res)=>{
-            dispatch({type:"USER", payload:false})
-            history('/', {replace:true});
-            if (res.status != 200){
-                const error = new Error(res.error);
-                throw error;
-            }
-        }).catch((err)=>{
-            console.log(err);
-        })
+        sessionStorage.removeItem("UserToken");
+        sessionStorage.setItem("UserToken", JSON.stringify([]));
+        history('/', {replace:true});
+        dispatch({type:"USER", payload:false});
+        // fetch('https://vci-api.onrender.com/logout', {
+        //     method: "GET",
+        //     headers:{
+        //         Accept: "application/json",
+        //         "Content-Type":"application/json"
+        //     },
+        //     credentials:"include"
+        // }).then((res)=>{
+        //     dispatch({type:"USER", payload:false})
+        //     history('/', {replace:true});
+        //     if (res.status != 200){
+        //         const error = new Error(res.error);
+        //         throw error;
+        //     }
+        // }).catch((err)=>{
+        //     console.log(err);
+        // })
     });
   return (
     <div>

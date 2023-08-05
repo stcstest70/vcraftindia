@@ -16,17 +16,31 @@ const Nav = () => {
   const { state, dispatch } = useContext(UserContext);
   const { state: { cart } } = CartState();
   const { state1: { wishlist } } = WishlistState();
-  useEffect(() => {
-    axios.get('https://vci-api.onrender.com/checkCookiePresent').then((res) => {
+  const checkTokenPresent = async (userToken) => {
+    try {
+      const res = await fetch('https://vci-api.onrender.com/checkCookiePresent', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          userToken
+        })
+      });
       if (res.status === 206) {
         dispatch({ type: "USER", payload: true })
       } else if (res.status === 406) {
         dispatch({ type: "USER", payload: false })
       } else {
-        
         console.log("some error in nav");
       }
-    })
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  useEffect(() => {
+    const userToken = sessionStorage.getItem('UserToken');
+    checkTokenPresent(userToken);
   }, []);
   const Menu = () => {
     if (state) {

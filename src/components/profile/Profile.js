@@ -24,27 +24,37 @@ const Profile = () => {
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState();
     const loginCheck = async () => {
-        setLoading(true);
-        const res = await fetch('https://vci-api.onrender.com/getUserData', {
-            method: 'GET',
+        try {
+            setLoading(true);
+            const userToken = sessionStorage.getItem('UserToken');
+          const res = await fetch('https://vci-api.onrender.com/checkCookiePresent', {
+            method: "POST",
             headers: {
-                "Accept": "appliation/json"
-            }
-        });
-        if (res.status === 401) {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              userToken
+            })
+          });
+          const udata = await res.json();
+          if (res.status === 406) {
             setLoading(false);
             navigate('/login');
-        }
-        const data = await res.json();
-        setData(data);
+          }
+          const data = udata.user;
+          setData(data);
         setid(data._id);
         setName(data.name);
         setaddress(data.address);
         setcontact(data.phone);
         setemail(data.email);
         setLoading(false);
-    }
+        } catch (error) {
+          console.log(error);
+        }
+      }
     useEffect(() => {
+        
         loginCheck();
     }, []);
 
@@ -155,6 +165,8 @@ const Profile = () => {
                 });
                 localStorage.removeItem("UserWishlist");
                 localStorage.setItem("UserWishlist", JSON.stringify([]));
+                sessionStorage.removeItem("UserToken");
+                sessionStorage.setItem("UserToken", JSON.stringify([]));
                 dispatch1({
                     type: "REMOVE_FROM_WISHLIST",
                     payload: wishlist

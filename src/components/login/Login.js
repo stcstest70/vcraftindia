@@ -36,9 +36,14 @@ const Login = () => {
     });
     const data = await res.json();
     if (res.status === 201) {
+      const token = data.token;
+    
+    // Save the token in sessionStorage as UserToken
+      sessionStorage.setItem('UserToken', token);
+      dispatch({ type: "USER", payload: true });
       window.alert("Login Successfull!");
       console.log("Login Successfull!");
-      dispatch({ type: "USER", payload: true })
+      
       // navigate("/");
       const previousUrl = sessionStorage.getItem('previousUrl');
       if (previousUrl) {

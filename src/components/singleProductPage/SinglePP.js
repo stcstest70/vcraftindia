@@ -91,15 +91,19 @@ const SinglePP = ({ Product, id }) => {
 
     const getUserDetails = async () => {
         try {
+            const userToken = sessionStorage.getItem('UserToken');
             const res = await fetch('https://vci-api.onrender.com/getUserData', {
-                method: "GET",
+                method: 'POST',
                 headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json"
-                }
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    userToken
+                })
             });
 
-            const data = await res.json();
+            const udata = await res.json();
+            const data = udata.user;
             if (data) {
                 setUserData({ ...userData, reviewerName: data.name });
                 if (data.pincode >= 400001 && data.pincode <= 400104) {
@@ -140,13 +144,14 @@ const SinglePP = ({ Product, id }) => {
         e.preventDefault();
         const prodId = id;
         const { reviewerName, reviewtitle, reviewDescription } = userData;
+        const userToken = sessionStorage.getItem('UserToken');
         const res = await fetch('https://vci-api.onrender.com/addReview', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                prodId, reviewerName, rating, reviewtitle, reviewDescription
+                prodId, reviewerName, rating, reviewtitle, reviewDescription, userToken
             })
         });
         if (res.status === 201) {

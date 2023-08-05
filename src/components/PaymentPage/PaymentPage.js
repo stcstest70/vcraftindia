@@ -15,14 +15,15 @@ const PaymentPage = () => {
     const [userDetails, setUserDetails] = useState([]);
     const [pincodeAvailable, setPincodeAvailable] = useState(false);
     const handleChangeAdress = async () => {
-
+        const userToken = sessionStorage.getItem('UserToken');
         const res = await fetch('https://vci-api.onrender.com/changeAdress', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                address
+                address,
+                userToken
             })
         });
         if (res.status === 200) {
@@ -34,14 +35,15 @@ const PaymentPage = () => {
         handleClose();
     }
     const handleChangeAdress2 = async () => {
-
+        const userToken = sessionStorage.getItem('UserToken');
         const res = await fetch('https://vci-api.onrender.com/changeAdress', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                address: locationAddress
+                address: locationAddress,
+                userToken
             })
         });
         if (res.status === 200) {
@@ -52,13 +54,47 @@ const PaymentPage = () => {
         }
         handleClose();
     }
-    useEffect(() => {
-        axios.get('https://vci-api.onrender.com/getUserData').then((res) => {
-            setUserDetails(res.data);
-            if(userDetails.pincode >= 400001 && userDetails.pincode <= 400104){
+    // useEffect(() => {
+    //     axios.get('https://vci-api.onrender.com/getUserData').then((res) => {
+    //         setUserDetails(res.data);
+    //         if(userDetails.pincode >= 400001 && userDetails.pincode <= 400104){
+    //             setPincodeAvailable(true);
+    //         }
+    //     })
+    // }, [setUserDetails, handleChangeAdress2, handleChangeAdress]);
+    const loginCheck = async () => {
+        try{
+            const userToken = sessionStorage.getItem('UserToken');
+              const res = await fetch('https://vci-api.onrender.com/getUserData', {
+                  method: 'POST',
+                  headers: {
+                      "Content-Type": "application/json"
+                  },
+                  body: JSON.stringify({
+                      userToken
+                  })
+              });
+              const udata = await res.json();
+              const data = udata.user;
+              setUserDetails(data);
+              if(userDetails.pincode >= 400001 && userDetails.pincode <= 400104){
                 setPincodeAvailable(true);
             }
-        })
+              if(res.status === 401){
+                navigate('/login');
+              }
+            if(!res.status === 200){
+              const error = new Error(res.error);
+              throw error;
+            }
+      
+          }catch(err){
+            console.log(err);
+          }
+      }
+    useEffect(() => {
+        
+        loginCheck();
     }, [setUserDetails, handleChangeAdress2, handleChangeAdress]);
 
     const userName = userDetails.name;
@@ -79,13 +115,13 @@ const PaymentPage = () => {
     const handleShow = () => setShow(true);
 
     //change address
-    const [address, setAddress] = useState(null);
+    const [address, setAddress] = useState('');
     
     
 
 
     //geoloation api
-    const [locationAddress, setLocationAddress] = useState(null);
+    const [locationAddress, setLocationAddress] = useState('');
     const getCurrentLocation = () => {
         navigator.geolocation.getCurrentPosition((position) => {
             const { latitude, longitude } = position.coords;
@@ -103,7 +139,7 @@ const PaymentPage = () => {
             .catch(error => console.error(error));
     }
     const LocationByLocationIQ = () => {
-        if (locationAddress != null) {
+        if (locationAddress != '') {
             return <div>
                 <div>
                     {locationAddress}

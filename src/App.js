@@ -38,6 +38,11 @@ function App() {
   } else {
     localStorage.setItem("UserWishlist", JSON.stringify([]));
   }
+  if ("UserToken" in sessionStorage) {
+    //Do nothing
+  } else {
+    sessionStorage.setItem("UserToken", JSON.stringify([]));
+  }
   return (
     <>
       <UserContext.Provider value={{ state, dispatch }}>

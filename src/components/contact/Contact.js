@@ -9,26 +9,29 @@ const Contact = () => {
     
   const [userData, setUserData] = useState({name:"", email:"", phone:"", message:""});
     const userContact = async ()=>{
-        try{
-          const res = await fetch('https://vci-api.onrender.com/getUserData',{
-            method:"GET",
-            headers:{
-              "Content-Type": "application/json",
-              Accept : "application/json"
-            }
+      try{
+        const userToken = sessionStorage.getItem('UserToken');
+          const res = await fetch('https://vci-api.onrender.com/getUserData', {
+              method: 'POST',
+              headers: {
+                  "Content-Type": "application/json"
+              },
+              body: JSON.stringify({
+                  userToken
+              })
           });
-    
-          const data = await res.json();
-          setUserData({...userData, name:data.name, email:data.email, phone:data.phone});
-    
-          if(!res.status === 200){
-            const error = new Error(res.error);
-            throw error;
-          }
-    
-        }catch(err){
-          console.log(err);
+          const udata = await res.json();
+          const data = udata.user;
+        setUserData({...userData, name:data.name, email:data.email, phone:data.phone});
+  
+        if(!res.status === 200){
+          const error = new Error(res.error);
+          throw error;
         }
+  
+      }catch(err){
+        console.log(err);
+      }
       }
     
       useEffect(()=>{
@@ -42,35 +45,43 @@ const Contact = () => {
         setUserData({...userData, [name]:value});
       }
       const {state} = useContext(UserContext);
-      if(state){
-        var contactForm = async (e)=>{
-          e.preventDefault();
-      
-          const {name, email, phone, message} = userData;
-      
-          const res = await fetch('https://vci-api.onrender.com/contact',{
-            method: "POST",
-            headers:{
-              "Content-Type" : "application/json",
-            },
-            body: JSON.stringify({
-              name, email, phone, message
-            })
-          });
-      
-          const data = await res.json();
-      
-          if(res.status === 401){
-            alert("Pls Enter all fields");
-          }
-          else if(res.status === 201){
-            alert("message sent successfully!");
-            setUserData({...userData, message:""})
-          }
-        }
-      }else{
-        navigate("/login");
+
+      const contactForm = async (e) => {
+    try {
+      e.preventDefault();
+    if (state) {
+      const userToken = sessionStorage.getItem('UserToken');
+
+      const { name, email, phone, message } = userData;
+
+      const res = await fetch('https://vci-api.onrender.com/contact', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name, email, phone, message, userToken
+        })
+      });
+
+      const data = await res.json();
+
+      if (res.status === 401) {
+        alert("Pls Enter all fields");
       }
+      else if (res.status === 201) {
+        alert("message sent successfully!");
+        setUserData({ ...userData, message: "" })
+      }
+    } else {
+      navigate("/login");
+    }
+    } catch (error) {
+      console.log(error);
+    }
+    
+
+  }
 
      
 

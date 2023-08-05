@@ -17,31 +17,79 @@ const TrackOrders = () => {
         sessionStorage.removeItem('previousUrlpaymentpage');
     },[]);
     
+    // const loginCheck = async () => {
+    //     const res = await fetch('https://vci-api.onrender.com/getUserData', {
+    //         method: 'POST',
+    //         headers: {
+    //             "Accept": "appliation/json"
+    //         }
+    //     });
+    //     if (res.status === 401) {
+    //         navigate('/login');
+    //     }
+    //     const data = await res.json();
+    //     setData(data);
+    // }
+    // const getOrderDetails = async () => {
+    //     const dataPromise = fetch('https://vci-api.onrender.com/getOrderDetails');
+    //     dataPromise.then((response) => {
+    //         return response.json();
+    //     })
+    //         .then((data) => {
+    //             setOrderData(data);
+    //             setIsLoading(false);
+    //         })
+    //         .catch((error) => {
+    //             console.error(error);
+    //         });
+    // }
     const loginCheck = async () => {
-        const res = await fetch('https://vci-api.onrender.com/getUserData', {
-            method: 'GET',
-            headers: {
-                "Accept": "appliation/json"
+        try {
+            const userToken = sessionStorage.getItem('UserToken');
+            const res = await fetch('https://vci-api.onrender.com/getUserData', {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    userToken
+                })
+            });
+            if (res.status === 401) {
+                navigate('/login');
             }
-        });
-        if (res.status === 401) {
-            navigate('/login');
+            const udata = await res.json();
+            const data = udata.user;
+            setData(data);
+        } catch (error) {
+            console.log(error);
         }
-        const data = await res.json();
-        setData(data);
+
     }
     const getOrderDetails = async () => {
-        const dataPromise = fetch('https://vci-api.onrender.com/getOrderDetails');
-        dataPromise.then((response) => {
-            return response.json();
-        })
-            .then((data) => {
-                setOrderData(data);
-                setIsLoading(false);
+        const userToken = sessionStorage.getItem('UserToken');
+        const dataPromise = await fetch('https://vci-api.onrender.com/getOrderDetails', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                userToken
             })
-            .catch((error) => {
-                console.error(error);
-            });
+        });
+        const data = await dataPromise.json();
+        setOrderData(data);
+        setIsLoading(false);
+        // dataPromise.then((response) => {
+        //     return response.json();
+        // })
+        //     .then((data) => {
+        //         setOrderData(data);
+        //         setIsLoading(false);
+        //     })
+        //     .catch((error) => {
+        //         console.error(error);
+        //     });
     }
     
     const NoOrdersYet = ()=>{

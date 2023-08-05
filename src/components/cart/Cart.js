@@ -41,8 +41,29 @@ const Cart = () => {
     }, [cart])
 
 
-    useEffect(() => {
-        axios.get('https://vci-api.onrender.com/checkCookiePresent').then((res) => {
+    // useEffect(() => {
+    //     axios.get('https://vci-api.onrender.com/checkCookiePresent').then((res) => {
+    //         if (res.status === 206) {
+    //             dispatch({ type: "USER", payload: true })
+    //         } else if (res.status === 406) {
+    //             dispatch({ type: "USER", payload: false })
+    //         } else {
+    //             console.log("some error in nav");
+    //         }
+    //     });
+    //     componentDidMount();
+    // }, []);
+    const checkTokenPresent = async (userToken) => {
+        try {
+            const res = await fetch('https://vci-api.onrender.com/checkCookiePresent', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    userToken
+                })
+            });
             if (res.status === 206) {
                 dispatch({ type: "USER", payload: true })
             } else if (res.status === 406) {
@@ -50,10 +71,15 @@ const Cart = () => {
             } else {
                 console.log("some error in nav");
             }
-        });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    useEffect(() => {
+        const userToken = sessionStorage.getItem('UserToken');
+        checkTokenPresent(userToken);
         componentDidMount();
     }, []);
-
     const links = document.querySelectorAll('a');
     //to get to top of the next page
     links.forEach(link => {
