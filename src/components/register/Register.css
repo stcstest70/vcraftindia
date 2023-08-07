@@ -84,6 +84,9 @@
     padding: 0;
     margin: 0;
 }
+.password-description{
+    font-size: 13px;
+}
 @media only screen and (max-width: 800px){
     .registerContainer .regImgContainer{
         display: none;

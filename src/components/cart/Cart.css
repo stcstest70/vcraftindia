@@ -108,4 +108,9 @@ select{
         justify-content: space-between;
         margin: 10px auto;
     }
+    .price {
+        display: flex;
+        padding-right: 5px;
+        padding-left: 8px;
+    }
 }

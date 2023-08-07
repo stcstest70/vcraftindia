@@ -106,6 +106,7 @@ const SinglePP = ({ Product, id }) => {
             const data = udata.user;
             if (data) {
                 setUserData({ ...userData, reviewerName: data.name });
+                setaddReviewFormIfUserPresent(true);
                 if (data.pincode >= 400001 && data.pincode <= 400104) {
                     setPincodeAvailable2(true);
                     setLoading(false);
@@ -113,7 +114,7 @@ const SinglePP = ({ Product, id }) => {
                     setPincodeAvailable2(false);
                     setLoading(false);
                 }
-                setaddReviewFormIfUserPresent(true);
+
             }
             if (!res.status === 200) {
                 console.log("User not logged in");
@@ -125,10 +126,10 @@ const SinglePP = ({ Product, id }) => {
     }
     const [productImageUrl, setProductImageUrl] = useState('');
     useEffect(() => {
-        if (state) {
-            getUserDetails();
-            componentDidMount();
-        }
+
+        getUserDetails();
+        componentDidMount();
+
         // also getting image url for enlarge modal
         Product.map((p) => {
             setProductImageUrl(p.image);

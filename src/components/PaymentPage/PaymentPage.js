@@ -185,6 +185,7 @@ const PaymentPage = () => {
     const handlePayment = async () => {
         try {
             setLoading(true);
+            const userToken = sessionStorage.getItem('UserToken');
             const { nonce } = await instance.requestPaymentMethod();
             const res = await fetch("https://vci-api.onrender.com/braintree/payment",{
                 method:'POST',
@@ -194,6 +195,7 @@ const PaymentPage = () => {
                 body:JSON.stringify({
                     nonce,
                     cart,
+                    userToken
                 })
             })
             
