@@ -1,34 +1,29 @@
-.catImg {
+.catImg{
   object-fit: cover;
   width: 160px;
-  height: 190px;
+  height: 174px;
   margin: auto;
 }
 
-.slick-prev {
+.slick-prev{
   /* background: linear-gradient(90deg, #cbcaca9e, transparent); */
   width: 40px;
   height: 100%;
   z-index: 1;
 }
-
 .slick-next {
   /* background: linear-gradient(270deg, #cbcaca9e, transparent); */
   width: 40px;
   height: 100%;
   z-index: 1;
 }
-
-.slick-next:hover {
+.slick-next:hover{
   background: linear-gradient(270deg, #bdb9b99e, transparent);
 }
-
-.slick-prev:hover {
+.slick-prev:hover{
   background: linear-gradient(90deg, #bdb9b99e, transparent);
 }
-
-.slick-prev:before,
-.slick-next:before {
+.slick-prev:before, .slick-next:before {
   font-family: 'slick';
   font-size: 27px;
   line-height: 1;
@@ -38,42 +33,35 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.catSlider>h5 {
+.catSlider > h5{
   border: 2px solid transparent;
   padding: 6px 11px;
   width: fit-content;
 }
-
-.catSlider>h5:hover {
+.catSlider > h5:hover{
   border: 2px solid #443a3a1f;
 }
-
-.catName h6 {
+.catName h6{
   text-align: center;
   text-transform: uppercase;
   padding-top: 10px;
 }
-
-.catName h6 {
+.catName h6{
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
-  /* number of lines to show */
+  -webkit-line-clamp: 2; /* number of lines to show */
   -webkit-box-orient: vertical;
 }
-
-.xyz {
+.xyz{
   width: 95% !important;
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
   margin: 10px auto;
 }
-
-.imgContainer {
+.imgContainer{
   position: relative;
 }
-
-.discount {
+.discount{
   width: fit-content;
   height: fit-content;
   background-color: red;
@@ -85,117 +73,83 @@
   font-weight: 600;
   padding: 3px;
 }
-
-.link {
+.link{
   text-decoration: none;
   color: inherit;
 }
-
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1000px){
   .catImg {
     object-fit: cover;
-    width: 150px;
-    height: 170px;
+    width: 167px;
+    height: 145px;
     margin: 10px auto;
-  }
 }
-
-@media only screen and (max-width: 940px) {
-
-  .slick-prev,
-  .slick-next {
-    background: radial-gradient(#d0d1d1 38%, #7f81831f 55%, #815d6f00 87%) !important;
+}
+@media only screen and (max-width: 940px){
+  .slick-prev, .slick-next {
+    background: radial-gradient(#d0d1d1 38%,#7f81831f 55%, #815d6f00 87%) !important;
     width: 30px;
     height: 16%;
     z-index: 1;
   }
-
   .catName h6 {
     font-size: 15px;
   }
 }
-
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 800px){
   .catImg {
     object-fit: cover;
-    width: 138px;
-    height: 160px;
+    width: 143px;
+    height: 146px;
     margin: auto;
-  }
 }
-@media only screen and (max-width: 640px) {
+}
+@media only screen and (max-width: 550px){
   .catImg {
     object-fit: cover;
-    width: 120px;
-    height: 140px;
+    width: 118px;
+    height: 117px;
     margin: auto;
-  }
 }
 
-@media only screen and (max-width: 550px) {
+.catName h6 {
+  font-size: 13px;
+}
+.categorySliderDiv {
+  width: 97%;
+  margin: 30px auto;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+.slick-prev {
+  left: -18px;
+}
+.slick-next {
+  right: -18px;
+}
+.slick-prev:before, .slick-next:before {
+  font-size: 20px;
+}
+.discount{
+  font-size: 12px;
+}
+}
+@media only screen and (max-width: 410px){
   .catImg {
     object-fit: cover;
-    width: 110px;
-    height: 130px;
+    width: 99px;
+    height: 100px;
     margin: auto;
-  }
-
-  .catName h6 {
-    font-size: 13px;
-    line-height: 13px;
-  }
-
-  .categorySliderDiv {
-    width: 97%;
-    margin: 10px auto;
-    padding: 10px;
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
-  }
-
-  .slick-prev {
-    left: -18px;
-  }
-
-  .slick-next {
-    right: -18px;
-  }
-
-  .slick-prev:before,
-  .slick-next:before {
-    font-size: 20px;
-  }
-
-  .discount {
-    font-size: 12px;
-  }
-
-  .slick-dots {
-    bottom: -10px !important;
-  }
-  .catSlider>h5 {
-    padding: 0px 0px;
-    margin: 0;
-  }
 }
-
-@media only screen and (max-width: 410px) {
-  .catImg {
-    object-fit: cover;
-    width: 100px;
-    height: 125px;
-    margin: auto;
-  }
-
-  .discount {
-    font-size: 11px;
-  }
+.discount{
+  font-size: 11px;
 }
-
-@media only screen and (max-wdth: 350px) {
+}
+@media only screen and (max-wdth: 350px){
   .catImg {
     object-fit: cover;
     width: 88px;
-    height: 79px;
+    height: 88px;
     margin: auto;
-  }
+}
 }

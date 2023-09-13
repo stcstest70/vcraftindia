@@ -186,6 +186,7 @@ input[type='radio']{
     top: -162px;
     right: 45px;
     font-size: 28px;
+    cursor: pointer;
 }
 .pincode-a-h{
     font-size: 19px;

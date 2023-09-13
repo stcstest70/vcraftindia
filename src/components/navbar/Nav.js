@@ -31,9 +31,7 @@ const Nav = () => {
         dispatch({ type: "USER", payload: true })
       } else if (res.status === 406) {
         dispatch({ type: "USER", payload: false })
-      } else {
-        console.log("some error in nav");
-      }
+      } 
     } catch (error) {
       console.log(error);
     }

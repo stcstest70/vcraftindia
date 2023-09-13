@@ -68,8 +68,9 @@ const CategorySlider = () => {
 
     <div className='catSlider'>
       <h5> Explore Categories </h5>
-      {/* {
-        loading? <div className="spinner"><Spinner animation="border"/></div> : <Slider {...settings}>
+      {
+        loading? <div className="spinner"><Spinner animation="border"/></div> : 
+        <Slider {...settings}>
         {data.map((singleData)=>{
            return <div className='cat'  key={singleData._id}>
               <Link to={`/matchedProduct/${singleData.name}`}>
@@ -85,7 +86,7 @@ const CategorySlider = () => {
   
         })}
       </Slider> 
-      } */}
+      }
 
 
       {/* for two category */}
@@ -103,7 +104,7 @@ const CategorySlider = () => {
       </div> */}
 
       {/* for static 7 categories */}
-      <Slider {...settings}>
+      {/* <Slider {...settings}>
         <div className='cat'>
           <Link to={`/matchedProduct/Idols`}>
             <div className="imgContainer">
@@ -184,7 +185,7 @@ const CategorySlider = () => {
             </div>
           </Link>
         </div>
-      </Slider>
+      </Slider> */}
     </div>
   )
 }

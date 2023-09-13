@@ -157,6 +157,7 @@ const SinglePP = ({ Product, id }) => {
         });
         if (res.status === 201) {
             window.alert("Review Sent Successfully successful");
+            window.location.reload();
         } else if (res.status === 401) {
             window.alert("Review not sent, user not logged in");
         } else if (res.status === 405) {
